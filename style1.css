@@ -1,0 +1,92 @@
+/* 自定义样式 */
+:root {
+    --bs-primary: #2c3e50;
+    --bs-primary-rgb: 44, 62, 80;
+    --bs-secondary: #3498db;
+    --bs-secondary-rgb: 52, 152, 219;
+    --bs-accent: #e74c3c;
+    --bs-accent-rgb: 231, 76, 60;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 页眉样式 */
+header {
+    background: linear-gradient(135deg, var(--bs-primary), #1a252f);
+    position: relative;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--bs-accent);
+}
+
+/* 导航栏 */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--bs-primary) !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* 卡片悬停效果 */
+.hover-lift {
+    transition: all 0.25s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 图标容器 */
+.icon-xl {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-light-primary {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+}
+
+/* 标题装饰线 */
+h2.position-relative::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 0.25rem;
+    background-color: var(--bs-accent);
+    border-radius: 0.25rem;
+}
+
+/* 表单样式 */
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+}
